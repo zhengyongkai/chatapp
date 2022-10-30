@@ -1,14 +1,21 @@
-import { createApp } from 'vue'
-import { createPinia } from 'pinia'
+import { createApp } from "vue";
+import { createPinia } from "pinia";
 
-import App from './App.vue'
-import router from './router'
+import App from "./App.vue";
+import router from "./router";
 
-import './assets/main.css'
+import "./assets/main.css";
+import "amfe-flexible/index.js";
+import "@nutui/nutui/dist/style.css";
 
-const app = createApp(App)
+import components from "./components";
 
-app.use(createPinia())
-app.use(router)
+import longpress from '@/utils/longpress'
 
-app.mount('#app')
+const app = createApp(App);
+
+app.use(createPinia());
+app.use(router);
+app.use(components)
+app.use(longpress);
+app.mount("#app");

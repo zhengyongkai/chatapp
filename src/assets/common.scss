@@ -1,0 +1,52 @@
+$--bg-color-white: #fff;
+$--bg-color-gray: #f7f8fa;
+
+$--text-color-gray: #999;
+$--text-color-blue: #409eff;
+$--text-color-danger: #f56c6c;
+$--text-color-balck: #000;
+
+$--body-common-padding: 0 16px;
+
+$--box-common-shallow: 0 1px 7px #edeef1;
+
+// display
+@mixin df-al-center {
+  display: flex;
+  align-items: center;
+}
+
+@mixin df-cl-space {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+}
+
+// auto
+@mixin box-center {
+  text-align: center;
+  margin: 0 auto;
+}
+
+// height line-height
+@mixin li-height($height) {
+  height: $height;
+  line-height: $height;
+}
+
+// position :fixed
+@mixin fx-top() {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+}
+
+@mixin fx-bottom() {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+}
