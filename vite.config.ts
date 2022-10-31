@@ -9,6 +9,7 @@ import vueJsx from "@vitejs/plugin-vue-jsx";
 export default ({ mode }) => {
   console.log(loadEnv(mode, process.cwd()).VITE_APP_BASE_URL);
   return defineConfig({
+    base: "./",
     plugins: [vue(), vueJsx()],
     resolve: {
       alias: {

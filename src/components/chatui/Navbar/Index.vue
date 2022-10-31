@@ -32,7 +32,7 @@ defineProps({
   @include fx-top;
   box-sizing: border-box;
   padding: $--body-common-padding;
-  background: $--bg-color-white;
+  background: $--bg-color-gray;
   height: 44px;
   box-shadow: $--box-common-shallow;
   .chat-navbar__left,

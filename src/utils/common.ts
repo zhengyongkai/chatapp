@@ -6,7 +6,7 @@ export const getStore = (
   return json ? JSON.parse(value) : value;
 };
 
-export const dateTimeFormat = (date: string) => {
+export const dateTimeFormat = (date: string) :string => {
   //  auto 0
   const autoZero = (n: string) => (String(n).length === 1 ? "0" : "") + n;
   // string to timestamp
@@ -51,3 +51,14 @@ export const dateTimeFormat = (date: string) => {
   }
   return `${Y}年${autoZero(m.toString())}月${autoZero(d.toString())}日`;
 };
+
+/**
+ * 获取本地图
+ * @param name // 文件名 如 doc.png
+ * @returns {*|string}
+ */
+export function getAssetsImages(name:string):string {
+  return new URL(`/src/assets/icon/${name}`, import.meta.url).href;
+}
+
+

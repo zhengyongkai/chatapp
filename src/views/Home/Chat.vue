@@ -104,6 +104,7 @@ let scroll: any = null;
 onMounted(() => {
   scroll = new BScroll(".wrapper", {
     scrollY: true,
+    click: true,
     pullDownRefresh: {
       threshold: 30,
     },
