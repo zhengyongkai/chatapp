@@ -9,7 +9,7 @@ interface messageContent {
 }
 </script>
 <script setup lang="ts">
-import { defineProps, computed, ref } from "vue";
+import { computed, ref } from "vue";
 import { dateTimeFormat } from "@/utils/common";
 // import ChatItemMenu from "./Components/ChatItemMenu.vue";
 defineProps<{

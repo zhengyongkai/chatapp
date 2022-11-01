@@ -1,6 +1,9 @@
 <script setup lang="ts">
 import { ref, onMounted } from "vue";
+import { useRouter } from "vue-router";
 import BScroll from "better-scroll";
+
+const router = useRouter();
 const message = ref([
   {
     user: {
@@ -113,6 +116,10 @@ onMounted(() => {
     scroll.finishPullDown();
   });
 });
+
+function to() {
+  router.push("/chat");
+}
 </script>
 
 <template>
@@ -126,6 +133,7 @@ onMounted(() => {
     <div class="chat-content wrapper">
       <div>
         <chat-item
+          @click="to"
           v-for="(value, key) in message"
           :key="key"
           :message="value"

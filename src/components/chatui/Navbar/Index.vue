@@ -1,5 +1,6 @@
 <script setup lang="ts">
-import { defineProps } from "vue";
+import { useRouter } from "vue-router";
+
 defineProps({
   backto: {
     type: Boolean,
@@ -9,12 +10,17 @@ defineProps({
     type: String,
   },
 });
+
+const router = useRouter();
+function onBack() {
+  router.go(-1);
+}
 </script>
 
 <template>
   <div class="chat-navbar">
     <div class="chat-navbar__left">
-      <nut-icon name="left" v-show="backto"></nut-icon>
+      <nut-icon name="left" v-show="backto" @click="onBack"></nut-icon>
     </div>
     <div class="chat-navbar__title">
       {{ title }}

@@ -1,8 +1,17 @@
 <script setup lang="ts">
-import { ref } from "vue";
+import { ref, watch } from "vue";
 import { useRouter } from "vue-router";
 const router = useRouter();
 const path = ref("/");
+
+watch(
+  router.currentRoute,
+  (val) => {
+    path.value = val.path;
+  },
+  { deep: true, immediate: true }
+);
+
 const onTabChange = (_res: any, index: string) => {
   router.replace(index);
 };

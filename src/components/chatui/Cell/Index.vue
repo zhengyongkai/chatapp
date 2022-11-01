@@ -2,26 +2,31 @@
 defineProps({
   icon: String,
   title: String,
-  number: Number || String,
+  to: String,
 });
 </script>
 <template>
-  <div class="chat-cell">
-    <div class="chat-cell__icon">
+  <div class="simple-cell">
+    <div class="simple-cell__icon">
       <img :src="icon" />
     </div>
-    <div class="chat-cell__title">
+    <div class="simple-cell__title">
       {{ title }}
     </div>
-    <div class="chat-cell__call" v-if="number && number > 0">
-      <chat-badge :number="number" />
+    <div class="simple-cell__content">
+      <div class="simple-cell__news">
+        <slot name="news" />
+      </div>
+      <div class="simple-cell__right">
+        <nut-icon name="right" size="12"></nut-icon>
+      </div>
     </div>
   </div>
 </template>
 
 <style scoped lang="scss">
 @import "@/assets/common.scss";
-.chat-cell {
+.simple-cell {
   @include df-al-center;
   position: relative;
   height: 48px;
@@ -37,18 +42,26 @@ defineProps({
     right: 0;
     bottom: 0;
   }
-  .chat-cell__icon {
+  .simple-cell__icon {
     margin-right: 12px;
     img {
-      width: 30px;
-      height: 30px;
+      width: 20px;
+      height: 20px;
       border-radius: 5px;
       padding: 0;
-      margin-bottom: -10px;
+      margin-bottom: -6px;
     }
   }
-  .chat-cell__call {
-    margin-left: auto;
+  .simple-cell__content {
+    @include df-al-right;
+    flex: 1;
+    .simple-cell__news {
+      margin-right: 4px;
+    }
+    .simple-cell__right {
+      margin-top: 2px;
+      color: $--text-color-gray;
+    }
   }
 }
 </style>

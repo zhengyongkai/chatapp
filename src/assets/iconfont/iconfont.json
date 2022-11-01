@@ -1,0 +1,30 @@
+{
+  "id": "3743393",
+  "name": "chat",
+  "font_family": "iconfont",
+  "css_prefix_text": "icon-",
+  "description": "",
+  "glyphs": [
+    {
+      "icon_id": "16549959",
+      "name": "add",
+      "font_class": "add",
+      "unicode": "e66c",
+      "unicode_decimal": 58988
+    },
+    {
+      "icon_id": "16468833",
+      "name": "system-QRcode",
+      "font_class": "system-QRcode",
+      "unicode": "e667",
+      "unicode_decimal": 58983
+    },
+    {
+      "icon_id": "16614369",
+      "name": "smail",
+      "font_class": "smail",
+      "unicode": "e67f",
+      "unicode_decimal": 59007
+    }
+  ]
+}

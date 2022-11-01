@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import { ref, onBeforeMount } from "vue";
 import { getAssetsImages } from "@/utils/common";
 
 const dataList = [
@@ -9,6 +10,7 @@ const dataList = [
         name: "新的朋友",
         icon: getAssetsImages("addFriend.png"),
         id: -4,
+        number: 1,
       },
       {
         name: "仅聊天的好友",
@@ -133,6 +135,13 @@ const dataList = [
     ],
   },
 ];
+
+let elevatorHeight = ref(0);
+
+onBeforeMount(() => {
+  // 计算 elevator 的 高度
+  elevatorHeight.value = document.body.clientHeight - 44 - 52;
+});
 </script>
 
 <template>
@@ -146,7 +155,7 @@ const dataList = [
     <div class="chat-content">
       <nut-elevator
         :index-list="dataList"
-        :height="550"
+        :height="elevatorHeight"
         :title-height="30"
         :space-height="10"
       >
@@ -154,6 +163,7 @@ const dataList = [
           <chat-cell
             :icon="slotProps.item.icon"
             :title="slotProps.item.name"
+            :number="slotProps.item.number"
           ></chat-cell>
         </template>
       </nut-elevator>

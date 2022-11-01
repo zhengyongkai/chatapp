@@ -1,5 +1,12 @@
 import { Tabbar, TabbarItem, Icon, Elevator, Badge } from "./nutui";
-import { ChatNavbar, ChatItem, ChatCell, ChatBadge } from "./chatui";
+import {
+  ChatNavbar,
+  ChatItem,
+  ChatCell,
+  ChatBadge,
+  Cell,
+  CellIcon,
+} from "./chatui";
 
 const components: any = [
   Tabbar,
@@ -11,6 +18,8 @@ const components: any = [
   { name: "chat-item", component: ChatItem },
   { name: "chat-cell", component: ChatCell },
   { name: "chat-badge", component: ChatBadge },
+  { name: "chat-simple-cell", component: Cell },
+  { name: "cell-icon", component: CellIcon },
 ];
 
 export default function install(Vue: any) {
